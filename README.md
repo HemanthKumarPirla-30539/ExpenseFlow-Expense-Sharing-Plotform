@@ -1,18 +1,107 @@
-# React + Vite
+# ExpenseFlow — Expense Sharing Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack expense-sharing application designed to help groups record shared expenses, track member balances, and simplify settlement calculations.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+ExpenseFlow provides a central place for users to create groups, manage members, record expenses, and calculate who owes whom. The project focuses on practical full-stack development, REST APIs, authentication, database persistence, and business logic.
 
-## React Compiler
+## Key Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- User registration and authentication
+- JWT-based authentication
+- Group creation and member management
+- Expense creation and tracking
+- Expense sharing among group members
+- Balance calculation and settlement logic
+- REST API-based backend communication
+- Persistent application data
 
-Note: This will impact Vite dev & build performances.
+## Architecture
 
-## Expanding the ESLint configuration
+```text
+React Frontend
+      |
+      | REST API / JSON
+      v
+Spring Boot Backend
+      |
+      +--> Authentication / JWT
+      |
+      +--> Business Services
+      |
+      +--> JPA / Hibernate
+      |
+      v
+    MySQL
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+| Area | Technology |
+| --- | --- |
+| Language | Java |
+| Backend | Spring Boot |
+| API | REST API |
+| ORM | JPA / Hibernate |
+| Database | MySQL |
+| Authentication | JWT |
+| Frontend | React, Vite |
+| HTTP Client | Axios |
+| Build / Development | Maven, npm |
+| Version Control | Git, GitHub |
+
+## Core Backend Concepts
+
+- Layered backend architecture
+- Entity and relationship modeling
+- RESTful endpoint design
+- Authentication and authorization
+- Expense and settlement business logic
+- Database persistence using JPA/Hibernate
+
+## Frontend
+
+The frontend is built with React and Vite and communicates with the backend through REST APIs.
+
+The current frontend dependencies include React, React Router, and Axios.
+
+## Getting Started
+
+### Backend
+
+Open the backend project and configure the MySQL connection and required environment/application properties.
+
+Then start the Spring Boot application using Maven.
+
+```bash
+mvn spring-boot:run
+```
+
+### Frontend
+
+```bash
+npm install
+npm run dev
+```
+
+The exact backend and frontend directory names should be taken from the current repository structure.
+
+## Security
+
+Do not commit database passwords, JWT secrets, API keys, or other credentials. Use environment variables or local configuration for sensitive values.
+
+## Future Improvements
+
+- Add automated settlement optimization
+- Add richer expense analytics
+- Add notifications for outstanding balances
+- Add deployment configuration
+- Add automated tests and CI checks
+
+## Author
+
+**Hemanth Kumar Pirla**  
+Java / Backend Developer | Computer Science Engineering Student
+
+[GitHub](https://github.com/HemanthKumarPirla-30539)
